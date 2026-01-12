@@ -1,4 +1,4 @@
-NAME = animal
+NAME = bureaucrat
 SRCS = Bureaucrat.cpp main.cpp
 
 CC = c++
