@@ -1,16 +1,13 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
-
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 int main()
 {
 	try
 	{
 		std::cout << "TEST 1" << std::endl;
-		Bureaucrat boss("Boss", 10);
-		Form tax("Tax Form", 1, 20);
+		Bureaucrat boss("Boss", 1);
+		AForm tax("Tax AForm", 1501, 20);
 		std::cout << "\n";
 		boss.signForm(tax);
 		std::cout << tax << std::endl;
@@ -28,7 +25,7 @@ int main()
 	{
 		std::cout << "TEST 2" << std::endl;
 		Bureaucrat intern("Intern", 150);
-		Form secret("Secret Form", 10, 5);
+		AForm secret("Secret AForm", 10, 5);
 		std::cout << "\n";
 		intern.signForm(secret);
 		std::cout << secret << std::endl;
@@ -44,7 +41,7 @@ int main()
 	try
 	{
 		std::cout << "TEST 3: INVALID FORM" << std::endl;
-		Form wrong("Wrong Form", 0, 200);
+		AForm wrong("Wrong AForm", 0, 200);
 	}
 	catch (std::exception &e)
 	{
@@ -54,13 +51,13 @@ int main()
 	try
 	{
 		Bureaucrat boss("Boss", 1);
-		Form original("Original", 50, 20);
+		AForm original("Original", 50, 20);
 		std::cout << "\n";
 		std::cout << "Original before sign: " << original << std::endl;
 		boss.signForm(original);
 		std::cout << "Original after sign : " << original << std::endl;
 
-		Form copy(original); // copy constructor
+		AForm copy(original); // copy constructor
 		std::cout << "Copy after copying   : " << copy << std::endl;
 		std::cout << "\n";
 
@@ -74,8 +71,8 @@ int main()
 	{
 		Bureaucrat boss("Boss", 1);
 
-		Form left("LEFT", 60, 30);
-		Form right("RIGHT", 10, 5);
+		AForm left("LEFT", 60, 30);
+		AForm right("RIGHT", 10, 5);
 
 		// Nënshkruaj vetëm RIGHT që të ketë signed=true
 		boss.signForm(right);
