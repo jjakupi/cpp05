@@ -7,12 +7,12 @@ AForm::AForm(const std::string name, const int grade_s, const int grade_ex): m_n
 		throw (Bureaucrat::GradeTooHighException());
 	else if (grade_s > 150 || grade_ex > 150)
 		throw (Bureaucrat::GradeTooLowException());
-	std::cout << "AForm Constructor called for " << m_name << std::endl;
+	//std::cout << "AForm Constructor called for " << m_name << std::endl;
 }
 
 AForm::AForm(AForm const &oth) : m_name(oth.m_name), m_grade_si(oth.m_grade_si), m_grade_ex(oth.m_grade_ex)
 {
-	std::cout << "AForm Copy Constructor called for " << m_name << std::endl;
+	//std::cout << "AForm Copy Constructor called for " << m_name << std::endl;
 	m_signed = oth.m_signed;
 }
 
@@ -20,13 +20,13 @@ AForm &AForm::operator=(AForm const &oth)
 {
 	if (this != &oth)
 		m_signed = oth.m_signed;
-	std::cout << "AForm Assignet Constructor called for AForm " << m_name << std::endl;
+	//std::cout << "AForm Assignet Constructor called for AForm " << m_name << std::endl;
 	return *this;
 }
 
 AForm::~AForm()
 {
-	std::cout << "AForm Destructor called for " << m_name << std::endl;
+	//std::cout << "AForm Destructor called for " << m_name << std::endl;
 }
 
 std::string AForm::getName(void) const
@@ -60,20 +60,9 @@ void AForm::beSigned(Bureaucrat &oth)
 
 std::ostream &operator<<(std::ostream &ostr, AForm const &src)
 {
-	ostr	<< "AForm name: " << src.getName()
-			<< ", signed: "	<< (src.get_S_Bool_Grade() ? "yes" : "no")
-			<< ", grade to sign: " << src.getSignedGrade()
-			<< ", grade to execute: " << src.getExecutedGrade();
+	ostr	<< "AForm name: " << src.getName() << std::endl;
+	ostr	<< "Signed: "	<< (src.get_S_Bool_Grade() ? "yes" : "no") << std::endl;
+	ostr	<< "Grade to sign: " << src.getSignedGrade() << std::endl;
+	ostr	<< "Grade to execute: " << src.getExecutedGrade() << std::endl;
 	return ostr;
 }
-
-void AForm::execute(Bureaucrat const & executor) const
-{
-	if(m_signed == false)
-		throw(FormNotSignedException());
-	else if(executor.getGrade() > getExecutedGrade())
-		throw (AForm::GradeTooLowException());
-	else
-		
-}
-

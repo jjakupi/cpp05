@@ -70,6 +70,7 @@ class AForm
 					return ("the form is not signed :)");
 				}
 		};
+
 };
 
 std::ostream &operator<<(std::ostream &ostr, const AForm &src);

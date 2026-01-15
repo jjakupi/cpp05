@@ -1,103 +1,46 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main()
 {
-	try
 	{
-		std::cout << "TEST 1" << std::endl;
-		Bureaucrat boss("Boss", 1);
-		AForm tax("Tax AForm", 1501, 20);
-		std::cout << "\n";
-		boss.signForm(tax);
-		std::cout << tax << std::endl;
-		boss.signForm(tax);
-		std::cout << "\n";
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "Exception: " << e.what() << std::endl;
-	}
+		std::cout << "PresidentialPardonForm test 1:" << std::endl;
+		try {
+			Bureaucrat				boss("Boss", 5);
+			PresidentialPardonForm	me("TTTTT");
 
-	std::cout << std::endl;
+			std::cout << me << std::endl;
 
-	try
-	{
-		std::cout << "TEST 2" << std::endl;
-		Bureaucrat intern("Intern", 150);
-		AForm secret("Secret AForm", 10, 5);
-		std::cout << "\n";
-		intern.signForm(secret);
-		std::cout << secret << std::endl;
-		std::cout << "\n";
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "Exception: " << e.what() << std::endl;
-	}
+			boss.signForm(me);
+			boss.executeForm(me);
+			std::cout << "\n";
+			std::cout << me << std::endl;
+			boss.signForm(me);
+			boss.executeForm(me);
 
-	std::cout << std::endl;
+			std::cout << "-------------------------------------\n";
+			std::cout << "PresidentialPardonForm test 2:\n";
 
-	try
-	{
-		std::cout << "TEST 3: INVALID FORM" << std::endl;
-		AForm wrong("Wrong AForm", 0, 200);
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "Exception: " << e.what() << std::endl;
-	}
-	std::cout << "\n";
-	try
-	{
-		Bureaucrat boss("Boss", 1);
-		AForm original("Original", 50, 20);
-		std::cout << "\n";
-		std::cout << "Original before sign: " << original << std::endl;
-		boss.signForm(original);
-		std::cout << "Original after sign : " << original << std::endl;
+			Bureaucrat				boss1("Boss1", 20);
+			//Bureaucrat				boss1("Boss1", 30);
+			PresidentialPardonForm	me1("TTTTT");
 
-		AForm copy(original); // copy constructor
-		std::cout << "Copy after copying   : " << copy << std::endl;
-		std::cout << "\n";
+			std::cout << me1 << std::endl;
 
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "Exception: " << e.what() << std::endl;
-	}
-	std::cout << "\n";
-	try
-	{
-		Bureaucrat boss("Boss", 1);
-
-		AForm left("LEFT", 60, 30);
-		AForm right("RIGHT", 10, 5);
-
-		// Nënshkruaj vetëm RIGHT që të ketë signed=true
-		boss.signForm(right);
+			boss1.signForm(me1);
+			boss1.executeForm(me1);
+			std::cout << "\n";
+			std::cout << me1 << std::endl;
+			boss1.signForm(me1);
+			boss1.executeForm(me1);
+		}
+		catch(const std::exception& e) {
+		std::cerr << e.what() << std::endl;
+		}
 		std::cout << "\n";
-		std::cout << "Before assignment:\n";
-		std::cout << "left : " << left << std::endl;
-		std::cout << "right: " << right << std::endl;
-		std::cout << "\n";
-		left = right; // assignment
-		std::cout << "\n";
-		std::cout << "After assignment:\n";
-		std::cout << "left : " << left << std::endl;
-		std::cout << "right: " << right << std::endl;
-		std::cout << "\n";
-		/*
-			Pritshmëria OOP për këtë ushtrim:
-			- Emri i left (m_name) NUK ndryshon (është const)
-			- Gradat e left (m_grade_si, m_grade_ex) NUK ndryshojnë (janë const)
-			- Vetëm m_signed kopjohet (sepse ai nuk është const)
-		*/
-	}
-	catch (std::exception &e)
-	{
-		std::cout << "Exception: " << e.what() << std::endl;
 	}
 	return 0;
 }
-
