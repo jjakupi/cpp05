@@ -12,7 +12,7 @@ int main()
 			Bureaucrat				boss("Boss", 5);
 			PresidentialPardonForm	me("TTTTT");
 			std::cout << me << std::endl;
-			
+
 			boss.signForm(me);
 			boss.executeForm(me);
 			std::cout << "\n";
@@ -92,21 +92,15 @@ int main()
 		hea.executeForm(rro);
 		std::cout << "\n";
 
-		// std::cout << "Shrubbery test 2 :" << std::endl;
-		// Bureaucrat			hea11("Eng11", 40);
-		// RobotomyRequestForm	rro11("RRO11");
+		std::cout << "Shrubbery test 2 :" << std::endl;
+		Bureaucrat			hea11("Eng11", 145);
+		ShrubberyCreationForm	rro11("RRO11");
 
-		// std::cout << hea11 << std::endl;
-		// std::cout << rro11 << std::endl;
-		// hea11.signForm(rro11);
-		// hea11.executeForm(rro11);
-		// std::cout << "\n";
-		// Bureaucrat t22(hea11);
-		// RobotomyRequestForm	v22(rro11);
-		// std::cout << t22 << std::endl;
-		// std::cout << v22 << std::endl;
-		// t22.signForm(v22);
-		// t22.executeForm(v22);
+		std::cout << hea11 << std::endl;
+		std::cout << rro11 << std::endl;
+		hea11.signForm(rro11);
+		hea11.executeForm(rro11);
+		std::cout << "\n";
 	}
 	catch(const std::exception& e)
 	{

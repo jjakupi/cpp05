@@ -2,6 +2,7 @@
 #include "PresidentialPardonForm.hpp"
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
+#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), m_target(target)
 {
@@ -42,5 +43,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	if(executor.getGrade() > getExecutedGrade())
 		throw (AForm::GradeTooLowException());
 	std::string file_name = m_target + "_shrubbery";
-
+	std::ofstream outfile(file_name.c_str());
+	outfile << TREE << std::endl;
+	outfile.close();
 }

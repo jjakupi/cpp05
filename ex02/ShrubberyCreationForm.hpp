@@ -1,6 +1,8 @@
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
 
+#define TREE "                      /\\\n    				 /**\\\n					/****\\\n				   /******\\\n					  ||\n				      ||\n					    "
+
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
