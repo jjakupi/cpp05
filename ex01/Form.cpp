@@ -1,6 +1,11 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
+Form::Form(): m_name("default"), m_grade_si(150), m_grade_ex(150), m_signed(false)
+{
+	std::cout << "Form Default Constructor called" << std::endl;
+}
+
 Form::Form(const std::string name, const int grade_s, const int grade_ex): m_name(name), m_grade_si(grade_s), m_grade_ex(grade_ex), m_signed(false)
 {
 	if(grade_s < 1 || grade_ex < 1)

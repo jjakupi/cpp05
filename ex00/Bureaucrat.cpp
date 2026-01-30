@@ -1,5 +1,10 @@
 #include "Bureaucrat.hpp"
 
+Bureaucrat::Bureaucrat() : m_name("Default"), m_grade(150)
+{
+	std::cout << "Bureaucrat Constructor called " << m_name << std::endl;
+}
+
 Bureaucrat::Bureaucrat(const std::string name, int grade) : m_name(name), m_grade(grade)
 {
 	if(m_grade < 1)
@@ -52,7 +57,7 @@ std::string Bureaucrat::getName(void) const
 	return m_name;
 }
 
-std::ostream &	operator<<(std::ostream & ostr, Bureaucrat const & src)
+std::ostream&	operator<<(std::ostream & ostr, Bureaucrat const& src)
 {
 	ostr << src.getName() << ", Bureaucrat grade " << src.getGrade();
 	return (ostr);

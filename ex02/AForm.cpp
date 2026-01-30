@@ -1,6 +1,11 @@
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
+AForm::AForm() : m_name("Default"), m_signed(false), m_grade_si(150), m_grade_ex(150)
+{
+	//std::cout << "AForm Constructor called for " << m_name << std::endl;
+}
+
 AForm::AForm(const std::string name, const int grade_s, const int grade_ex): m_name(name), m_grade_si(grade_s), m_grade_ex(grade_ex), m_signed(false)
 {
 	if(grade_s < 1 || grade_ex < 1)

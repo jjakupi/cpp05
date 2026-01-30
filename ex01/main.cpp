@@ -6,11 +6,12 @@ int main()
 	try
 	{
 		std::cout << "TEST 1" << std::endl;
-		Bureaucrat boss("Boss", 10);
-		Form tax("Tax Form", 1, 20);
+		Bureaucrat boss("Boss", 9);
+		Form tax("Tax Form", 9, 20);
 		std::cout << "\n";
 		boss.signForm(tax);
 		std::cout << tax << std::endl;
+		std::cout << "\033[34mTrying to resign the form twice will throw an exeption that is already signed\033[0m" << std::endl;
 		boss.signForm(tax);
 		std::cout << "\n";
 	}

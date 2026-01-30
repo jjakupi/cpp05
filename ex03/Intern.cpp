@@ -8,16 +8,15 @@ Intern::Intern()
 Intern::Intern(Intern const &oth)
 {
 	//std::cout << "Copy Constructor called for Intern " << std::endl;
-
 	*this = oth;
 }
 
-// Intern &Intern::operator=(Intern const &oth)
-// {
-// 	//std::cout << "Assignet Constructor called for Intern "  << std::endl;
-// 	if (this != &oth)
-// 		return *this;
-// }
+Intern &Intern::operator=(Intern const &oth)
+{
+	//std::cout << "Assignet Constructor called for Intern "  << std::endl;
+	if (this != &oth)
+		return *this;
+}
 
 AForm*	Intern::makePresidential(std::string target)
 {

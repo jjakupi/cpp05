@@ -1,6 +1,10 @@
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
+Bureaucrat::Bureaucrat() : m_name("Default"), m_grade(150)
+{
+	std::cout << "Bureaucrat Constructor called " << m_name << std::endl;
+}
 Bureaucrat::Bureaucrat(const std::string name, int grade) : m_name(name), m_grade(grade)
 {
 	if(m_grade < 1)
