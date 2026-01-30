@@ -1,7 +1,7 @@
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-AForm::AForm() : m_name("Default"), m_signed(false), m_grade_si(150), m_grade_ex(150)
+AForm::AForm() : m_name("Default"), m_grade_si(150), m_grade_ex(150), m_signed(false)
 {
 	//std::cout << "AForm Constructor called for " << m_name << std::endl;
 }

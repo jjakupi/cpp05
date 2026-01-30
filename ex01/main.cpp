@@ -7,7 +7,7 @@ int main()
 	{
 		std::cout << "TEST 1" << std::endl;
 		Bureaucrat boss("Boss", 9);
-		Form tax("Tax Form", 9, 20);
+		Form tax("Tax Form", 9, 1); //grade to execute nuk perdoret ende ketu po egizston per ex02..
 		std::cout << "\n";
 		boss.signForm(tax);
 		std::cout << tax << std::endl;

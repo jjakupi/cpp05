@@ -5,17 +5,17 @@ Intern::Intern()
 	//std::cout << "Constructor called for Intern " << std::endl;
 }
 
-Intern::Intern(Intern const &oth)
+Intern::Intern(const Intern &oth)
 {
 	//std::cout << "Copy Constructor called for Intern " << std::endl;
 	*this = oth;
 }
 
-Intern &Intern::operator=(Intern const &oth)
+Intern &Intern::operator=(const Intern& oth)
 {
 	//std::cout << "Assignet Constructor called for Intern "  << std::endl;
-	if (this != &oth)
-		return *this;
+	(void)oth;
+	return *this;
 }
 
 AForm*	Intern::makePresidential(std::string target)
@@ -33,7 +33,7 @@ AForm*	Intern::makeRobot(std::string target)
 
 AForm* Intern::makeForm(std::string name_of_form, std::string target)
 {
-	std::string names[3] = {"Shrubbery Request", "Robotomy Request", "Presidential"};
+	std::string names[3] = {"shrubbery creation", "robotomy request", "presidential pardon"};
 
 	AForm* (Intern::*funcs[3])(std::string) =
 	{

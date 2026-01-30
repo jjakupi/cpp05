@@ -12,7 +12,7 @@ class Intern
 	public:
 		Intern();
 		Intern(Intern const &oth);
-		//Intern &operator=(Intern const &oth);
+		Intern &operator=(Intern const &oth);
 		~Intern();
 
 		AForm*	makePresidential(std::string target);
