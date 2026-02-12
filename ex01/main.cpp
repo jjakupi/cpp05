@@ -6,10 +6,10 @@ int main()
 	try
 	{
 		std::cout << "TEST 1" << std::endl;
-		Bureaucrat boss("Boss", 9);
+		Bureaucrat boss("Boss", 9);//grade e keti duhet te jet me e vogel se tax qe ta sign
 		Form tax("Tax Form", 9, 1); //grade to execute nuk perdoret ende ketu po egizston per ex02.. pra "1"ketu
 		std::cout << "\n";
-		boss.signForm(tax);
+		boss.signForm(tax);//this-> objekt pra bureaucrat qe therret funksionin
 		std::cout << tax << std::endl;
 		std::cout << "\033[34mTrying to resign the form twice will throw an exeption that is already signed\033[0m" << std::endl;
 		boss.signForm(tax);

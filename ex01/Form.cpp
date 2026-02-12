@@ -3,7 +3,7 @@
 
 Form::Form(): m_name("default"), m_grade_si(150), m_grade_ex(150), m_signed(false)
 {
-	std::cout << "Form Default Constructor called" << std::endl;
+	//std::cout << "Form Default Constructor called" << std::endl;
 }
 
 Form::Form(const std::string name, const int grade_s, const int grade_ex): m_name(name), m_grade_si(grade_s), m_grade_ex(grade_ex), m_signed(false)
@@ -12,12 +12,12 @@ Form::Form(const std::string name, const int grade_s, const int grade_ex): m_nam
 		throw (Bureaucrat::GradeTooHighException());
 	else if (grade_s > 150 || grade_ex > 150)
 		throw (Bureaucrat::GradeTooLowException());
-	std::cout << "Form Constructor called for " << m_name << std::endl;
+	//std::cout << "Form Constructor called for " << m_name << std::endl;
 }
 
 Form::Form(Form const &oth) : m_name(oth.m_name), m_grade_si(oth.m_grade_si), m_grade_ex(oth.m_grade_ex)
 {
-	std::cout << "Copy Constructor called for " << m_name << std::endl;
+	//std::cout << "Copy Constructor called for " << m_name << std::endl;
 	m_signed = oth.m_signed;
 }
 
@@ -25,13 +25,13 @@ Form &Form::operator=(Form const &oth)
 {
 	if (this != &oth)
 		m_signed = oth.m_signed;
-	std::cout << "Assignet Constructor called for Bureaucrat " << m_name << std::endl;
+	//std::cout << "Assignet Constructor called for Bureaucrat " << m_name << std::endl;
 	return *this;
 }
 
 Form::~Form()
 {
-	std::cout << "Form Destructor called for " << m_name << std::endl;
+	//std::cout << "Form Destructor called for " << m_name << std::endl;
 }
 
 std::string Form::getName(void) const

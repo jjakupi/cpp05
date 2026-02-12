@@ -6,7 +6,7 @@ int main()
 		std::cout<< "Testing dhe grade with higher than '150' " << "\n";
 		try
 		{
-			Bureaucrat	Beaur1 = Bureaucrat("Me", 150);
+			Bureaucrat	Beaur1 = Bureaucrat("Me", 150);//grade e keti duhet te jet me e vogel se tax qe ta sign
 			std::cout << "\n";
 			std::cout << Beaur1 << std::endl;
 			Beaur1.incrementGrade();

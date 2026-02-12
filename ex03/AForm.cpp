@@ -25,7 +25,7 @@ AForm &AForm::operator=(AForm const &oth)
 {
 	if (this != &oth)
 		m_signed = oth.m_signed;
-	std::cout << "AForm Assignet Constructor called for AForm " << m_name << std::endl;
+	//std::cout << "AForm Assignet Constructor called for AForm " << m_name << std::endl;
 	return *this;
 }
 
