@@ -16,10 +16,10 @@ int main()
 			Beaur1.decrementGrade();
 			std::cout << Beaur1 << std::endl;
 		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
+ 	 catch(std::string &error)
+ 	 {
+ 	   std::cerr<<"Error: "<<error<<std::endl;
+  	}
 		std::cout << "\n";
 		std::cout<< "Testing dhe grade lower than '1' " << "\n";
 
@@ -34,10 +34,10 @@ int main()
 			Beaur1.incrementGrade();
 			std::cout << Beaur1 << std::endl;
 		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
+ 	 catch(std::string &error)
+ 	 {
+ 	   std::cerr<<"Error: "<<error<<std::endl;
+  	}
 
 		std::cout << "\n";
 		std::cout<< "Testing the Assignment Operator:" << "\n";
@@ -56,10 +56,11 @@ int main()
 			std::cout << Beaur2 << std::endl;
 			std::cout << "\n";
 		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
+ 	 catch(std::string &error)
+ 	 {
+ 	   std::cerr<<"Error: "<<error<<std::endl;
+  	}
+
 
 		std::cout << "\n";
 		std::cout<< "Testing the Copy Constructor: " << "\n";
@@ -73,10 +74,11 @@ int main()
 			std::cout << "\n";
 
 		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
+ 	 catch(std::string &error)
+ 	 {
+ 	   std::cerr<<"Error: "<<error<<std::endl;
+  	}
+
 
 		try
 		{
@@ -89,10 +91,11 @@ int main()
 			std::cout << "\n";
 
 		}
-		catch(const std::exception& e)
-		{
-			std::cerr << e.what() << std::endl;
-		}
+ 	 catch(std::string &error)
+ 	 {
+ 	   std::cerr<<"Error: "<<error<<std::endl;
+  	}
+
 	}
 	return 0;
 }
