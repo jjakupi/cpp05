@@ -1,0 +1,38 @@
+Pse është pointer (AForm*) dhe jo objekt (AForm)?
+
+Sepse:
+
+AForm është abstract class
+
+ka virtual pure functions
+
+NUK mund të krijosh objekt AForm direkt
+
+Pra kjo është e pamundur: AForm form;
+
+form është një pointer që: do të tregojë te një nga format konkrete që Intern krijon:ShrubberyCreationForm,
+RobotomyRequestForm, PresidentialPardonForm
+
+por tipi i pointer-it është AForm*, sepse:
+I vetmi tip i përbashkët për të tre është AForm (base class).
+Prandaj kthen AForm*.
+
+Pse pointer dhe jo AForm?
+
+AForm është abstract → nuk mund të bësh AForm form;
+
+Intern krijon forma dinamikisht (me new) → duhet të kthejë adresën e objektit → pointer.
+pa e ditur fare nëse f është robotomy apo shrubbery.
+
+Kjo quhet polymorphism.
+///////
+
+what() është mënyra standarde për të marrë mesazhin e error-it.... The grade is too low”, “form is not signed”
+
+VIRTUAL(NE EXCEPTION):Kjo është polymorphism. Pa virtual do thërritej what() i std::exception, jo mesazhi yt.
+
+const char *Kjo është tipi i kthimit.
+what() duhet të kthejë:një tekst shpjegues të error-it.Por jo std::string. Sepse standardi i C++ për exceptions kërkon C-string:
+
+
+throw() → tabelë: “ky buton nuk do të shtypet kurrë pra nuk duhet te hedh nje exception”
