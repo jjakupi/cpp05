@@ -83,3 +83,9 @@ void Bureaucrat::executeForm(AForm const & form) const
 		std::cerr << this->getName() << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
+
+std::ostream&	operator<<(std::ostream & ostr, Bureaucrat const& src)
+{
+	ostr << src.getName() << ", Bureaucrat grade " << src.getGrade();
+	return ostr;
+}

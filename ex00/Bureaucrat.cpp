@@ -8,9 +8,9 @@ Bureaucrat::Bureaucrat() : m_name("Default"), m_grade(150)
 Bureaucrat::Bureaucrat(const std::string name, int grade) : m_name(name), m_grade(grade)
 {
 	if(m_grade < 1)
-		throw std::string("Grade too high");
+		throw (Bureaucrat::GradeTooHighException());
 	else if (m_grade > 150)
-		throw std::string("Grade too low");
+		throw (Bureaucrat::GradeTooLowException());
 	//std::cout << "Bureaucrat Constructor called " << m_name << std::endl;
 }
 
@@ -42,14 +42,14 @@ void Bureaucrat::decrementGrade()
 {
 	m_grade += 1;
 	if(m_grade > 150)
-		throw std::string("Grade too low");
+		throw (Bureaucrat::GradeTooLowException());
 }
 
 void Bureaucrat::incrementGrade()
 {
 	m_grade -= 1;
 	if (m_grade < 1)
-		throw std::string("Grade too low");
+		throw (Bureaucrat::GradeTooHighException());
 }
 
 std::string Bureaucrat::getName(void) const
